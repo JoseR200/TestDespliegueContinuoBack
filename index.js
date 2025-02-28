@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require('dotenv');
 dotenv.config();
+const crypto = require('crypto');
+const { exec } = require('child_process');
 
 console.log("Test despliegue continuo backend api started");
 
