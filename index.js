@@ -28,7 +28,7 @@ app.post('/webhook', (req, res) => {
     const ref = req.body.ref;
 
     if (ref === 'refs/heads/main') {
-        exec('sh /home/bitnami/deployTestDC.sh', (error, _stdout, _stderr) => {
+        exec('bash /home/bitnami/deployTestDC.sh', (error, _stdout, _stderr) => {
             if (error) {
                 console.error(`Error al ejecutar el script: ${error}`);
                 return res.status(500).send('Error en el despliegue.');
