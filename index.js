@@ -25,6 +25,8 @@ app.get("/test-route", (_req, res) => {
 });
 
 app.post('/webhook', (req, res) => {
+    const ref = req.body.ref;
+    
     if (ref === 'refs/heads/main') {
         exec('sh /home/bitnami/deploy.sh', (error, _stdout, _stderr) => {
             if (error) {
