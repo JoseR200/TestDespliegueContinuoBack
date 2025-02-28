@@ -20,13 +20,13 @@ app.use("/api/users", UserRoutes);
 
 app.get("/test-route", (_req, res) => {
     return res.status(200).json({
-        "version": "1.5.0"
+        "version": "2.5.0"
     });
 });
 
 app.post('/webhook', (req, res) => {
     const ref = req.body.ref;
-    
+
     if (ref === 'refs/heads/main') {
         exec('sh /home/bitnami/deploy.sh', (error, _stdout, _stderr) => {
             if (error) {
