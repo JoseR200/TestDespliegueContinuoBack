@@ -19,7 +19,7 @@ app.use("/api/users", UserRoutes);
 
 app.get("/test-route", (_req, res) => {
     return res.status(200).json({
-        "version": "2.2.2"
+        "version": "7.7.7"
     });
 });
 
